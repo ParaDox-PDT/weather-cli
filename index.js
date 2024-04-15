@@ -21,9 +21,9 @@ const getForcast = async () => {
         const response = await getWeather(process.env.CITY ?? 'Uzbekistan')
         console.log(response);
     } catch (error) {
-        if (error?.response.status == 404) {
+        if (error?.response?.status == 404) {
             printError("City not found!")
-        } else if (error?.response.status == 401) {
+        } else if (error?.response?.status == 401) {
             printError("Invalid Token")
         } else {
             printError(error.message)
