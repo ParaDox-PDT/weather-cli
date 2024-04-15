@@ -24,13 +24,14 @@ const startCLI = () => {
     }
     if (args.s) {
         // save city
+
     }
     if (args.t) {
         // save token
         return saveToken(args.t)
     }
     // result
-    getWeather('Uzbekistan')
+    getWeather(process.env.CITY ?? 'Uzbekistan')
 }
 
 startCLI()
