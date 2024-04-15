@@ -7,9 +7,9 @@ const getWeather = async city => {
     if (process.env.TOKEN && process.env.TOKEN.trim()) {
         token = process.env.TOKEN.trim()
     } else {
-        token = await getKeyValue(TOKEN_DICTIONARY.token);
+        token = await getKeyValue(TOKEN_DICTIONARY.token)
     }
-    console.log(token);
+
     if (!token) {
         throw new Error("API doesn't exist, -t [API_KEY] for saving token")
     }
