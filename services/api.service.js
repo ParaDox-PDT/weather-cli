@@ -3,7 +3,15 @@ import { getKeyValue, TOKEN_DICTIONARY } from './storage.service.js'
 
 
 const getWeather = async city => {
-    let token =process.env.TOKEN ?? await getKeyValue(TOKEN_DICTIONARY.token)
+    console.log(typeof process.env.TOKEN, process.env.TOKEN.length)
+    let token;
+    if (process.env.TOKEN && process.env.TOKEN.trim()) {
+         token =process.env.TOKEN.trim()
+    } else {
+        token = await getKeyValue(TOKEN_DICTIONARY.token);
+
+    }
+    console.log(token);
     if (!token) {
         throw new Error("API doesn't exist, -t [API_KEY] for saving token")
     }
@@ -16,6 +24,7 @@ const getWeather = async city => {
             units: "metric"
         }
     })
+    console.log(data);
     return data
 }
 
