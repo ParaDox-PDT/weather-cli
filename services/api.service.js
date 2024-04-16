@@ -1,9 +1,8 @@
 import axios from 'axios'
 import { getKeyValue, TOKEN_DICTIONARY } from './storage.service.js'
 
-const getIcon = icon =>{
-    console.log(icon);
-    switch(icon.slice(0,-1)){
+const getIcon = icon => {
+    switch (icon.slice(0, -1)) {
         case '01':
             return '☀️'
         case '02':
@@ -49,7 +48,7 @@ const getWeather = async city => {
     return data
 }
 
-export { getWeather ,getIcon}
+export { getWeather, getIcon }
 
 
 // const url = new URL("https://api.openweathermap.org/data/2.5/weather?q=Tashkent&appid=eceb400020d177bdbe4382defb4302d5")

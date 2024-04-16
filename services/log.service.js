@@ -1,6 +1,5 @@
 import chalk from "chalk"
 import dedent from "dedent-js";
-import consolePng from 'console-png'
 
 const printError = error => {
     console.log(chalk.bgRed("ERROR") + ' ' + error);
@@ -22,7 +21,7 @@ const printHelp = () => {
 
 
 
-const printWeather = (response, icon,folderPath) => {
+const printWeather = (response, icon,) => {
     console.log(dedent`
     ${chalk.bgMagenta('WEATHER')} City weather ${response.name}
     ${icon} ${response.weather[0].description}

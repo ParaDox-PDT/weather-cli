@@ -12,7 +12,6 @@ const getArgs = args => {
             }
         }
     })
-
     return res
 }
 
