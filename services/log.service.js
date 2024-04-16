@@ -25,10 +25,10 @@ const printHelp = () => {
 const printWeather = (response, icon,folderPath) => {
     console.log(dedent`
     ${chalk.bgMagenta('WEATHER')} City weather ${response.name}
-    ${icon}   ${response.weather[0].description}
-    Temprature: ${response.main.temp} (feels like ${response.main.feels_like})
+    ${icon} ${response.weather[0].description}
+    Temperature: ${response.main.temp}°C (feels like ${response.main.feels_like}°C)
     Humidity: ${response.main.humidity}%
-    Wind speed: ${response.wind.speed}
+    Wind speed: ${response.wind.speed} km/h
     `);
 }
 
